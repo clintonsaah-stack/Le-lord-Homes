@@ -1,19 +1,26 @@
 import type { Metadata } from 'next';
+import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/Navbar';
-import { Footer } from '@/components/Footer';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
+import { Footer } from '@/components/Footer';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+});
 
 export const metadata: Metadata = {
-  title: 'Le Lörd Homes | Premium Property Solutions',
-  description: 'Premium property consultancy and solutions for landlords, investors and property owners. HMO Management, Deal Sourcing, Serviced Accommodation and more.',
-  keywords: 'property consultancy, HMO management, property investment, serviced accommodation, Airbnb management, tenant placement',
+  title: 'Le Lörd Homes | Property Management & Investment Consultancy',
+  description: 'Expert property management and consultancy solutions for landlords and investors. HMO management, Airbnb optimization, tenant placement, and investment strategy.',
+  keywords: 'property management, HMO management, Airbnb, landlord consultancy, property investment',
+  viewport: 'width=device-width, initial-scale=1',
+  robots: 'index, follow',
   openGraph: {
-    title: 'Le Lörd Homes | Premium Property Solutions',
-    description: 'Property Made Easier. Expert solutions for landlords, investors and property owners.',
-    url: 'https://lelord.homes',
+    title: 'Le Lörd Homes | Property Management & Investment Consultancy',
+    description: 'Premium property solutions for UK landlords and investors',
     type: 'website',
-    locale: 'en_GB',
   },
 };
 
@@ -23,20 +30,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
+        <meta charSet="utf-8" />
+        <meta name="theme-color" content="#1a1a1a" />
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>" />
       </head>
       <body className="bg-primary-dark text-text-primary">
         <Navbar />
-        <main>{children}</main>
-        <Footer />
+        {children}
         <WhatsAppButton />
+        <Footer />
       </body>
     </html>
   );

@@ -1,55 +1,74 @@
 // Navigation items
 export const NAV_ITEMS = [
-  { label: 'HOME', href: '#home' },
-  { label: 'SERVICES', href: '#services' },
-  { label: 'ABOUT', href: '#about' },
-  { label: 'CONSULTATIONS', href: '#consultations' },
-  { label: 'CONTACT', href: '#contact' },
+  { label: 'Home', href: '#home' },
+  { label: 'Services', href: '#services' },
+  { label: 'About', href: '#about' },
+  { label: 'Consultations', href: '#consultations' },
+  { label: 'Contact', href: '#contact' },
 ];
 
-// Services data
+// Contact configuration
+export const CONTACT_CONFIG = {
+  whatsapp: '+[PLACEHOLDER: Add WhatsApp number with country code, e.g., +447700000000]',
+  phone: '+[PLACEHOLDER: Add business phone number]',
+  email: '[PLACEHOLDER: Add business email address]',
+  instagram: 'https://instagram.com/[PLACEHOLDER: Add Instagram handle]',
+};
+
+// WhatsApp message templates
+export const WHATSAPP_MESSAGES = {
+  default: 'Hi Le Lörd Homes, I\'d like to learn more about your services.',
+  hmo: 'Hi, I\'m interested in your HMO management services. Can we discuss my property?',
+  deal_sourcing: 'Hello, I\'m looking for property investment opportunities. Tell me more about your deal sourcing service.',
+  consultancy: 'Hi, I need expert property consultancy advice. What packages do you offer?',
+  airbnb: 'I\'m interested in optimizing my Airbnb property. Can we discuss your optimization service?',
+  tenant_placement: 'Hello, I need help sourcing quality tenants. Do you offer this service?',
+  strategy: 'Hi, I\'d like to discuss my property investment strategy with your team.',
+};
+
+// Services
 export const SERVICES = [
   {
-    id: 1,
+    id: 'hmo',
     number: '01',
     title: 'HMO Management',
-    description: 'End-to-end support and management for HMO properties, from tenant sourcing to compliance and day-to-day operations.',
+    description: 'Complete HMO compliance, tenant management, and regulatory expertise to maximize your rental income while staying compliant.',
     icon: 'Building2',
   },
   {
-    id: 2,
+    id: 'deal_sourcing',
     number: '02',
     title: 'Deal Sourcing',
-    description: 'Helping investors identify property opportunities that align with their investment goals.',
+    description: 'Access curated property investment opportunities aligned with your portfolio goals and investment criteria.',
     icon: 'Search',
   },
   {
-    id: 3,
+    id: 'consultancy',
     number: '03',
     title: 'Property Consultancy',
-    description: 'Professional property guidance and strategy for landlords, investors and property owners.',
+    description: 'Strategic guidance on property investment, portfolio optimization, and long-term wealth building through real estate.',
     icon: 'Briefcase',
   },
   {
-    id: 4,
+    id: 'airbnb',
     number: '04',
-    title: 'Serviced Accommodation',
-    description: 'Support with setting up, operating and managing serviced-accommodation properties.',
-    icon: 'Home',
-  },
-  {
-    id: 5,
-    number: '05',
-    title: 'Airbnb Setup & Optimisation',
-    description: 'From listing creation and presentation to pricing strategy and guest-management processes.',
+    title: 'Airbnb Optimization',
+    description: 'Maximize your short-term rental income with proven strategies for listings, pricing, and guest management.',
     icon: 'Globe',
   },
   {
-    id: 6,
-    number: '06',
+    id: 'tenant_placement',
+    number: '05',
     title: 'Tenant Placement',
-    description: 'Helping landlords source suitable tenants and reduce unnecessary void periods.',
+    description: 'Thorough tenant sourcing and vetting to ensure quality occupiers and minimize void periods.',
     icon: 'Users',
+  },
+  {
+    id: 'strategy',
+    number: '06',
+    title: 'Investment Strategy',
+    description: 'Personalized strategy sessions to align your property portfolio with financial goals and market opportunities.',
+    icon: 'Home',
   },
 ];
 
@@ -57,48 +76,26 @@ export const SERVICES = [
 export const CONSULTATIONS = [
   {
     id: 1,
-    title: 'Complimentary Discovery Call',
-    duration: '15 Minutes',
-    price: 'FREE',
-    description: 'A short introductory conversation where the client can explain their property, goals or situation and understand how Le Lörd Homes may be able to help.',
-    cta: 'BOOK A DISCOVERY CALL',
-    ctaLink: '#',
+    title: 'Quick Consultation',
+    duration: '30 minutes',
+    price: 'Free',
+    cta: 'Book Free Session',
+    description: 'Perfect for quick questions or first-time property owners. Get initial guidance on your property needs and explore how we can help.',
   },
   {
     id: 2,
-    title: 'Property Consultation',
-    duration: '30 Minutes',
+    title: 'Property Review',
+    duration: '60 minutes',
     price: '£50',
-    description: 'Focused property advice and guidance relating to the client\'s individual situation or property.',
-    cta: 'BOOK 30-MINUTE CONSULTATION',
-    ctaLink: '#',
+    cta: 'Book Now',
+    description: 'Deep-dive analysis of your current property setup, performance metrics, and actionable recommendations for improvement.',
   },
   {
     id: 3,
-    title: 'Property Strategy Session',
-    duration: '60 Minutes',
+    title: 'Strategy Session',
+    duration: '90 minutes',
     price: '£85',
-    description: 'A deeper session for clients wanting detailed discussion, guidance and strategy around their property, investment or property-business plans.',
-    cta: 'BOOK 60-MINUTE SESSION',
-    ctaLink: '#',
+    cta: 'Book Now',
+    description: 'Comprehensive property portfolio strategy, investment planning, and a detailed action plan customized to your goals.',
   },
 ];
-
-// Contact configuration
-export const CONTACT_CONFIG = {
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+1234567890', // To be replaced with real number
-  phone: process.env.NEXT_PUBLIC_PHONE_NUMBER || '+44 (0) 123 456 7890',
-  email: process.env.NEXT_PUBLIC_EMAIL || 'hello@lelord.homes',
-  instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || 'https://instagram.com/lelord.homes',
-};
-
-// WhatsApp messages
-export const WHATSAPP_MESSAGES = {
-  default: "Hi Le Lörd Homes, I've visited your website and I'd like to enquire about your property services.",
-  hmoManagement: "Hi Le Lörd Homes, I'm interested in HMO Management and I'd like to find out more.",
-  dealSourcing: "Hi Le Lörd Homes, I'm interested in Deal Sourcing and I'd like to find out more.",
-  propertyConsultancy: "Hi Le Lörd Homes, I'm interested in Property Consultancy and I'd like to find out more.",
-  servicedAccommodation: "Hi Le Lörd Homes, I'm interested in Serviced Accommodation and I'd like to find out more.",
-  airbnbOptimisation: "Hi Le Lörd Homes, I'm interested in Airbnb Setup & Optimisation and I'd like to find out more.",
-  tenantPlacement: "Hi Le Lörd Homes, I'm interested in Tenant Placement and I'd like to find out more.",
-};
