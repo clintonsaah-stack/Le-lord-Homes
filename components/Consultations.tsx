@@ -1,6 +1,6 @@
 'use client';
 
-import { CONSULTATIONS, CONTACT_CONFIG, WHATSAPP_MESSAGES } from '@/lib/constants';
+import { CONSULTATIONS, CONTACT_CONFIG } from '@/lib/constants';
 import { generateWhatsAppLink } from '@/lib/utils';
 import { Check } from 'lucide-react';
 
